@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { Form } from './Form/Form';
 import { Contacts } from './Contacts/Contacts';
 import { Filter } from './Filter/Filter';
+import { GlobalStyle } from './GlobalStyle/GlobalStyle';
 
 export class App extends Component {
   state = {
@@ -59,6 +60,7 @@ export class App extends Component {
     return (
       <>
         <h1>Phonebook</h1>
+        <GlobalStyle />
         <Form onSubmit={formSubmitHandler} />
         <h2>Contacts</h2>
         <Filter value={filter} onChange={changeFilter} />
