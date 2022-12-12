@@ -3,6 +3,7 @@ import { Form } from './Form/Form';
 import { Contacts } from './Contacts/Contacts';
 import { Filter } from './Filter/Filter';
 import { GlobalStyle } from './GlobalStyle/GlobalStyle';
+import { nanoid } from 'nanoid';
 
 export class App extends Component {
   state = {
@@ -15,8 +16,8 @@ export class App extends Component {
     filter: '',
   };
 
-  formSubmitHandler = ({ name, id, number }) => {
-    const newContact = { name, id, number };
+  formSubmitHandler = ({ name, number }) => {
+    const newContact = { name, id: nanoid(), number };
     if (
       this.state.contacts.find(
         contact => contact.name.toLowerCase() === newContact.name.toLowerCase()

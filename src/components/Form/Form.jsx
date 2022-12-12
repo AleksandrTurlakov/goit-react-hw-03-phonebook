@@ -6,7 +6,6 @@ import { FormWrapper, Label, Input, Button } from './Form.styled';
 export class Form extends Component {
   state = {
     name: '',
-    id: '',
     number: '',
   };
 
@@ -23,12 +22,11 @@ export class Form extends Component {
     const { name, value } = evt.currentTarget;
     this.setState({
       [name]: value,
-      id: nanoid(),
     });
   };
 
   reset = () => {
-    this.setState({ name: '', id: '', number: '' });
+    this.setState({ name: '', number: '' });
   };
 
   render() {
